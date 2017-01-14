@@ -7,10 +7,28 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<link rel="stylesheet" href="/style/style.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table-locale-all.min.js"></script>
 </head>
 
 <body>
-	<h1>Crash Cpp Server</h1>
+	<div class="container">
+		<h1>Crash Cpp Server</h1>
+		<table data-toggle="table" data-url="/api/reports" data-sort-name="reported" data-sort-order="desc">
+			<thead>
+				<tr>
+					<th data-field="title">Title</th>
+					<th data-field="body">Body</th>
+					<th data-field="report">Report</th>
+					<th data-field="reported" data-sortable="true">reported</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
 
 </body>
 
