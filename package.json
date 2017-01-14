@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "express": "4.13.x",
+    "mongoose": "latest",
     "ejs": "2.4.x",
     "body-parser": "1.14.x",
     "method-override": "2.3.x",

@@ -3,6 +3,8 @@
 var path = require('path');
 var _ = require('lodash');
 
+var mongohost = process.env.MONGO_HOST || 'localhost';
+
 function requiredProcessEnv(name) {
     if (!process.env[name]) {
         throw new Error('You must set the ' + name + ' environment variable');
@@ -26,7 +28,14 @@ var all = {
 
     test: {
         "testkey": "testvalue"
-    }
+    },
+
+    mongodb: {
+        uri:    process.env.MONGOLAB_URI ||
+                process.env.MONGOHQ_URL ||
+                process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME ||
+                'mongodb://'+ mongohost +'/crashcppserver'
+  },
 
 
 };
