@@ -18,13 +18,12 @@ exports.hello = function (req, res) {
 }
 
 exports.report = function (req, res) {
-
     var report_ = new Report({title: req.query.title,
         //reported:  Date.now,
         body: req.query.body,
         report: req.query.report
     });
-    console.log(report_);
+    // console.log(report_);
     report_.save(function (err, doc) {
         if (err) {
             // error handled in the callback
