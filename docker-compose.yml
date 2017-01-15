@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  mongodb:
+    image: mongo
+    #ports:
+    #  - "mongodb:27017:27017"
+    networks:
+       - crashcppapp
+  crashcppserver:
+    build: 
+       context: .
+       dockerfile: Dockerfile
+    ports: 
+      - "3000:3000"
+    environment:
+      - MONGO_HOST=mongodb
+    networks:
+       - crashcppapp
+    restart: always
+
+networks:
+  crashcppapp:
+    driver: bridge
